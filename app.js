@@ -127,6 +127,9 @@ sliderBtn.addEventListener('click', function () {
   createSlider()
 })
 
-function keyupHandler(){
-  document.getElementById('search-btn').click();
-}
+var input = document.getElementById("search");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    document.getElementById("search-btn").click();
+  }
+});
