@@ -126,3 +126,7 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
+
+function keyupHandler(){
+  document.getElementById('search-btn').click();
+}
