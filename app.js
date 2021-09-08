@@ -42,18 +42,25 @@ const selectItem = (event, img) => {
   if (item === -1) {
     element.classList.add('added');
     sliders.push(img);
-  } else {
+  } else if (item !== -1) {
     element.classList.remove('added');
-    sliders.pop(img);
+    // sliders.pop(img);
+    delete sliders[sliders.indexOf(img)]
   }
 }
 var timer
 const createSlider = () => {
-  // check slider image length
-  if (sliders.length < 2) {
+  let newArr = []
+  sliders.forEach((item) => {
+    if (item != undefined) {
+      newArr.push(item)
+    }
+  })
+  if (newArr.length < 2) {
     alert('Select at least 2 image.')
-    return;
+    return
   }
+
   // crate slider previous next area
   sliderContainer.innerHTML = '';
   const prevNext = document.createElement('div');
