@@ -141,3 +141,13 @@ input.addEventListener("keyup", function(event) {
     document.getElementById("search-btn").click();
   }
 });
+
+
+function themeChange(){
+  const themeChange = document.getElementById("body-theme");
+    themeChange.classList.toggle("darkTheme");
+  const darkMode = document.getElementById("dark-mode")
+  const nightMode = document.getElementById("day-mode")
+  darkMode.classList.toggle('d-none')
+  nightMode.classList.toggle('d-none')
+}
